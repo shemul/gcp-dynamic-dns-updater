@@ -45,7 +45,6 @@ function build() {
 
     go build -o app -v -ldflags="-X main.version=$hash" .
     docker build -t shemul/gcp-dynamic-dns-updater .
-    docker push shemul/gcp-dynamic-dns-updater
     rm ./app
 }
 

@@ -17,29 +17,28 @@ func Run(app *cli.App) {
 		if you consider run in Docker, make sure you pass --net=host and restart policy as always
 	`
 	app.HideHelp = true
+	app.UsageText = ""
+
 	app.Commands = []cli.Command{
 		{
 			Name:  "update-dns",
-			Usage: "Run the server that takes task input",
+			Usage: "Update DNS record for once using the current IP",
 			Action: func(c *cli.Context) {
 				updateDNS()
-				os.Exit(0)
 			},
 		},
 		{
 			Name:  "list-dns",
-			Usage: "Run the worker that will consume tasks",
+			Usage: "Print the list of DNS with their Currennt IP",
 			Action: func(c *cli.Context) {
 				listDns()
-				os.Exit(0)
 			},
 		},
 		{
 			Name:  "list-ip",
-			Usage: "Run the worker that will consume tasks",
+			Usage: "Print the current IP",
 			Action: func(c *cli.Context) {
 				listIP()
-				os.Exit(0)
 			},
 		},
 	}

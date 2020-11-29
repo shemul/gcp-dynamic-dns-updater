@@ -10,3 +10,4 @@ COPY app /app
 FROM alpine
 WORKDIR /app
 COPY --from=build /app/app .
+ENTRYPOINT ./app
